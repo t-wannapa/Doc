@@ -8,7 +8,7 @@ In mongoDB you can use regular expression object (i.e. /pattern/)
 
 # $options
 
-| options | description                                       | example                                         | result                         |
-| ------- | ------------------------------------------------- | ------------------------------------------------| -------------------------------|
-| i       | Case insensitivity ```to match upper and lower``` | db.products.find({ sku: { $regex: /^ABC/i } })  | { "_id": 100, "sku": "abc123"} |
-
+| options | description                                       | example                                                     | result                          |
+| ------- | ------------------------------------------------- | ------------------------------------------------------------| --------------------------------|
+| i       | Case insensitivity ```to match upper and lower``` | db.products.find({ sku: { $regex: /^ABC/i } })              | { "_id": 100, "sku": "abc123" } |
+| m       | For patterns that include anchors (i.e. ^,$)      | db.products.find({ sku: { $regex: /^S/, $options: 'm' } } ) | { "_id": 100, "sku": "Sabc123" }|
